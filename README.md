@@ -12,15 +12,15 @@ A client library for interacting with a Geoserver instance
 
     var geoserver = require("geoserver-client");
 
-    geoserver.capabilities(err, function(capabilities) {
+    var url = ""http://geocarto.igac.gov.co/geoservicios/wms";
+    geoserver.capabilities(url, function(err, capabilities) {
       if (err) return console.log(err);
-      
       console.log(capabilities.WMS_Capabilities.Service.Title)
     });
 
 #API
 
-##wms.capabilities()
+##wms.capabilities (wmsBaseUrl, [queryOptions], callback(err,capabilities) )
 
 Gets the capabilities reported by the WMS as a javascript object
 
@@ -32,7 +32,7 @@ Gets the capabilities reported by the WMS as a javascript object
       console.log(capabilities):
     });
 
-##wms.layers()
+##wms.layers (wmsBaseUrl, [queryOptions], callback(err,layers))
 
 Gets layers reported in the capabilities by the WMS as a javascript array
 
