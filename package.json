@@ -1,6 +1,6 @@
 {
   "name": "geoserver-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "osk <oskosk@gmail.com> (http://olopez.com.ar/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/osk/node-geoserver-client"
+    "url": "https://github.com/oskosk/node-geoserver-client"
   },
   "license": "MIT",
   "dependencies": {

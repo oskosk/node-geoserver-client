@@ -1,5 +1,4 @@
-node-geoserver-client
-=====================
+#node-geoserver-client
 
 A client library for interacting with a Geoserver instance 
 
@@ -12,7 +11,7 @@ A client library for interacting with a Geoserver instance
 
     var geoserver = require("geoserver-client");
 
-    var url = ""http://geocarto.igac.gov.co/geoservicios/wms";
+    var url = "http://geocarto.igac.gov.co/geoservicios/wms";
     geoserver.capabilities(url, function(err, capabilities) {
       if (err) return console.log(err);
       console.log(capabilities.WMS_Capabilities.Service.Title)
