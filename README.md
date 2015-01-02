@@ -8,56 +8,74 @@ A client library for interacting with a Geoserver instance
     npm install geoserver-client
 
 #Usage
+      geoserverclient = require("geoserver-client");
+    
+      var url = "http://geocarto.igac.gov.co/geoservicios/wms";
+      var geoserver = geoserverclient(url);
 
-    var geoserver = require("geoserver-client");
-
-    var url = "http://geocarto.igac.gov.co/geoservicios/wms";
-    geoserver.capabilities(url, function(err, capabilities) {
+    // Get WMS Service Title 
+    geoserver.wms.capabilities(function(err, capabilities) {
       if (err) return console.log(err);
       console.log(capabilities.WMS_Capabilities.Service.Title)
     });
 
 #API
 
-##wms.capabilities (wmsBaseUrl, [queryOptions], callback(err,capabilities) )
+##geoserver(wmsBaseUrl)
+
+Returns an instance of geoserver client for a specific URL. You can use
+this object for calling the API's methods.
+
+###Usage
+
+    var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+      geoserver = require("geoserver-client")(url);
+
+##wms.capabilities ([queryOptions], callback(err,capabilities) )
 
 Gets the capabilities reported by the WMS as a javascript object
 
 
 ###Example
     
-    var wmsUrl = "http://geocarto.igac.gov.co/geoservicios/wms";  
-    geoserver.wms.capabilities(wmsUrl, function(err, capabilities) {
-      console.log(capabilities):
+    var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+      geoserver = require("geoserver-client")(url);
+
+    geoserver.wms.capabilities(function(err, capabilities) {
+      console.log(capabilities);
     });
 
-##wms.layers (wmsBaseUrl, [queryOptions], callback(err,layers))
+##wms.layers ([queryOptions], callback(err,layers))
 
 Gets layers reported in the capabilities by the WMS as a javascript array
 
 ###Example
     
-    var wmsUrl = "http://geocarto.igac.gov.co/geoservicios/wms";  
-    geoserver.wms.layers(wmsUrl, function(err, layers) {
-      console.log(layers):
+    var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+      geoserver = require("geoserver-client")(url);
+
+    geoserver.wms.layers(function(err, layers) {
+      console.log(layers);
     });
 
-##wms.serviceMetadata (wmsBaseUrl, [queryOptions], callback(err,serviceMetadata))
+##wms.serviceMetadata ([queryOptions], callback(err,serviceMetadata))
 
 Gets service metadata reported in the capabilities under the `Service` key/tag as a javascript object
 
 ###Example
     
-    var wmsUrl = "http://geocarto.igac.gov.co/geoservicios/wms";  
-    geoserver.wms.serviceMetadata(wmsUrl, function(err, serviceMetadata) {
-      console.log(serviceMetadata):
+    var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+      geoserver = require("geoserver-client")(url);    
+
+    geoserver.wms.serviceMetadata(function(err, serviceMetadata) {
+      console.log(serviceMetadata);
     });
 
 #License
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2015 Oscasr López <oskosk@gmail.com>
+Copyright (c) 2014-2015 Oscar López <oskosk@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,8 +1,8 @@
-var geoserver = require("..");
+var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+  geoserverclient = require(".."),
+  geoserver = geoserverclient(url);
 
-geoserver.wms.capabilities("http://geocarto.igac.gov.co/geoservicios/wms",
-  function(err, capabilities) {
-    if (err) return console.log(err);
-
-    console.log("WMS Title: ", capabilities.WMS_Capabilities.Service.Title)
-  });
+geoserver.wms.capabilities(function(err, capabilities) {
+  if (err) return console.log(err);
+  console.log(capabilities.WMS_Capabilities.Service.Title)
+});
