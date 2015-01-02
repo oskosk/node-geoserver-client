@@ -1,10 +1,9 @@
-geoserver = require("../index");
+var url = "http://geocarto.igac.gov.co/geoservicios/wms",
+  geoserver = require("..")(url);
 
-geoserver.wms.serviceMetadata("http://geocarto.igac.gov.co/geoservicios/wms",
-  function(err, serviceMetadata) {
-    if (err) {
-      return console.log("error: %j", err);
-    }
+geoserver.wms.serviceMetadata(function(err, serviceMetadata) {
+  if (err) {
+    return console.log("error: %j", err);
+  }
   console.log(serviceMetadata);
-
-  });
+});
