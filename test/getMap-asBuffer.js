@@ -1,4 +1,4 @@
-var wmsUrl = "http://geocarto.igac.gov.co/geoservicios/wms",
+var wmsUrl = "http://geocarto.igac.gov.co/geoservicios",
   geoserver = require("..")(wmsUrl),
   fs = require("fs");
 
