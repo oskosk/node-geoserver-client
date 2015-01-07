@@ -1,6 +1,6 @@
 {
   "name": "geoserver-client",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "debug": "~2.1.1",
     "extend": "~2.0.0",
     "xml2json": "~0.5.1",
-    "wms-client": "~1.0.1",
-    "url-join": "0.0.1"
+    "url-join": "0.0.1",
+    "node-rest-client": "~1.4.3",
+    "wms-client": "~1.2.0"
   }
 }
