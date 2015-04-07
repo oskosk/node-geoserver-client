@@ -14,12 +14,14 @@
   "license": "MIT",
   "dependencies": {
     "URIjs": "~1.14.1",
-    "superagent": "~0.21.0",
     "debug": "~2.1.1",
     "extend": "~2.0.0",
-    "xml2json": "~0.5.1",
-    "url-join": "0.0.1",
     "node-rest-client": "~1.4.3",
-    "wms-client": "~1.2.0"
+    "request": "^2.55.0",
+    "superagent": "~0.21.0",
+    "url-join": "0.0.1",
+    "wms-client": "~1.2.0",
+    "xml2js": "^0.4.6",
+    "xml2json": "~0.5.1"
   }
 }
