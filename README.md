@@ -1,16 +1,18 @@
-#node-geoserver-client
+# node-geoserver-client
 
-A client library for interacting with a Geoserver instance 
+A client library for interacting with a [Geoserver](http://geoserver.org/) instance 
 
 
-#Installation
+# Installation
 
     npm install geoserver-client
 
-#Usage
+# Usage
     geoserverclient = require("geoserver-client");
   
     var url = "http://localhost:8080/geoserver/";
+    //Authenticated connection
+    //var geoserver = geoserverclient(url, {user:"admin", password:"geoserver00"});
     var geoserver = geoserverclient(url);
 
     // Get WMS Service Title 
@@ -19,11 +21,11 @@ A client library for interacting with a Geoserver instance
       console.log(capabilities.WMS_Capabilities.Service.Title)
     });
 
-#API
+# API
 
 ## Initialization
 
-###geoserverclient(geoserverBaseUrl)
+### geoserverclient(geoserverBaseUrl)
 
 Returns an instance of geoserver client for a specific URL. You can use
 this object for calling the API's methods.
@@ -32,7 +34,7 @@ this object for calling the API's methods.
 
 `http://localhost:8080/geoserver`
 
-####Usage
+#### Usage
 
     var url = "http://localhost:8080/geoserver",
       geoserver = require("geoserver-client")(url);
@@ -61,7 +63,10 @@ you get a `wms` property in this instance: `geoserver.wms`
 [wms-client API docs](https://www.npmjs.com/package/wms-client#api)* 
 for better reference. There are useful examples there for each method.
 
-#License
+## Admin REST API related calls
+
+
+# License
 
 The MIT License (MIT)
 
